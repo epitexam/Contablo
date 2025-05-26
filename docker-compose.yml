@@ -13,6 +13,6 @@ services:
     #    tmpfs:
     #      size: 134217728 # 128*2^20 bytes = 128Mb
     environment:
-      POSTGRES_PASSWORD: example
-      POSTGRES_USER: snirlla
-      POSTGRES_DB: sensor-api
+      POSTGRES_PASSWORD: contablo
+      POSTGRES_USER: contablo-op
+      POSTGRES_DB: contablo-api
