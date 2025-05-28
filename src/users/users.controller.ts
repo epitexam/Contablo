@@ -8,10 +8,10 @@ import { AuthGuard } from 'src/auth/auth.gard';
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
-  }
+  // @Post()
+  // create(@Body() createUserDto: CreateUserDto) {
+  //   return this.usersService.create(createUserDto);
+  // }
 
   @Get()
   findAll(@Query('page') page?: string, @Query('limit') limit?: string) {
