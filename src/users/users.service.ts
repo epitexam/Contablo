@@ -21,16 +21,20 @@ export class UsersService {
     });
   }
 
-  async findOne(id: number): Promise<User> {
-    const user = await this.usersRepository.findOne({ where: { id } });
-    if (!user) throw new NotFoundException(`User ${id} not found`);
-    return user;
+  async findOne(id: number): Promise<User | null> {
+    return await this.usersRepository.findOne({ where: { id } });
   }
 
-  async findOneByEmail(email: string): Promise<User> {
-    const user = await this.usersRepository.findOne({ where: { email } });
-    if (!user) throw new NotFoundException(`No user linked to this email.`);
-    return user
+  async findOneByEmail(email: string): Promise<User | null> {
+    return await this.usersRepository.findOne({ where: { email } });
+  }
+
+  async findOneByUuid(uuid: string): Promise<User | null> {
+    return await this.usersRepository.findOne({ where: { uuid } });
+  }
+
+  async findOneByUsername(username: string): Promise<User | null> {
+    return await this.usersRepository.findOne({ where: { username } });
   }
 
   update(id: number, updateUserDto: UpdateUserDto): Promise<UpdateResult> {
