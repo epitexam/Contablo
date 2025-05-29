@@ -3,7 +3,7 @@ import { IsEmail, IsString, Length, Matches } from "class-validator";
 
 export class SigninDto {
     @ApiProperty({
-        example: 'user@example.com',
+        example: 'alice@example.com',
         description: 'Adresse email utilisée pour se connecter',
         type: 'string',
         format: 'email',
